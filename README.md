@@ -1,1 +1,1 @@
-# Learn
+# OpenGL code samples
