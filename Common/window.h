@@ -1,3 +1,6 @@
+#ifndef WINDOW_H
+#define WINDOW_H
+
 #include <iostream>
 
 #include <glad/glad.h>
@@ -41,3 +44,5 @@ GLFWwindow* initWindow(int width, int height, const std::string& title)
 
 	return window;
 }
+
+#endif // !WINDOW_H

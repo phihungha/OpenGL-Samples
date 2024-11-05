@@ -1,3 +1,6 @@
+#ifndef SHADER_H
+#define SHADER_H
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -91,6 +94,11 @@ public:
 		glUseProgram(programId);
 	}
 
+	void setUni1i(const std::string& name, int value) {
+		int location = glGetUniformLocation(programId, name.c_str());
+		glUniform1i(location, value);
+	}
+
 	void setUni1f(const std::string& name, float value) {
 		int location = glGetUniformLocation(programId, name.c_str());
 		glUniform1f(location, value);
@@ -122,3 +130,5 @@ public:
 		glUniform4f(location, value1, value2, value3, value4);
 	}
 };
+
+#endif // !SHADER_H
