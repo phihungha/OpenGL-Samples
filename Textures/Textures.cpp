@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 #include <shader.h>
 #include <texture.h>
 #include <vao.h>
@@ -49,7 +53,20 @@ int main()
 		shader.setUni1i("tex1", 0);
 		shader.setUni1i("tex2", 1);
 		shader.setUni1f("mixAmount", mixAmount);
+
 		glBindVertexArray(vao);
+
+		glm::mat4 transform_1{ 1.0f };
+		transform_1 = glm::translate(transform_1, glm::vec3(0.5f, -0.5f, 0.0f));
+		transform_1 = glm::rotate(transform_1, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+		shader.setUniMat4fv("transform", transform_1);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+		glm::mat4 transform_2{ 1.0f };
+		transform_2 = glm::translate(transform_2, glm::vec3(-0.5f, 0.5f, 0.0f));
+		double scaleFactor = abs(sin(glfwGetTime()));
+		transform_2 = glm::scale(transform_2, glm::vec3((float)scaleFactor));
+		shader.setUniMat4fv("transform", transform_2);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 		glfwSwapBuffers(window);

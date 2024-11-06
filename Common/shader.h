@@ -6,6 +6,8 @@
 #include <sstream>
 #include <string>
 
+#include <glm/glm.hpp>
+#include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 
 GLuint createShader(GLenum type, const std::string& source) {
@@ -128,6 +130,14 @@ public:
 	) {
 		int location = glGetUniformLocation(programId, name.c_str());
 		glUniform4f(location, value1, value2, value3, value4);
+	}
+
+	void setUniMat4fv(
+		const std::string& name,
+		const glm::mat4& value
+	) {
+		int location = glGetUniformLocation(programId, name.c_str());
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
 	}
 };
 
