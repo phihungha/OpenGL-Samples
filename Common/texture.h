@@ -10,6 +10,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
+
 GLuint createTexture(const std::string& imagePath, bool hasAlpha = false) {
 	GLuint texture;
 	glGenTextures(1, &texture);

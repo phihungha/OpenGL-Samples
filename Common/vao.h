@@ -5,6 +5,7 @@
 
 #include <glad/glad.h>
 
+
 GLuint createVao(
 	const std::vector<float>& vertices,
 	const std::vector<unsigned int>& elements

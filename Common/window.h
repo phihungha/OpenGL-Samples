@@ -6,6 +6,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+
 void onFramebufferResize(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
 }

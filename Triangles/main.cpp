@@ -17,19 +17,19 @@ int main() {
 	ShaderProgram shader3 = ShaderProgram::fromFiles("vertex_shader_3.glsl", "fragment_shader_2.glsl");
 
 	std::vector<float> vertices1{
-		-0.75f, -0.25f, 0.0f, 0.0f, 0.0f, 0.0f,
-		-0.5f, 0.25f, 0.0f, 0.0f, 0.0f, 0.0f,
-		-0.25f, -0.25f, 0.0f, 0.0f, 0.0f, 0.0f,
+		-0.75f, -0.25f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		-0.5f, 0.25f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		-0.25f, -0.25f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f,
 	};
 	std::vector<float> vertices2{
-		-0.25f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f,
-		0.0f, 0.25f, 0.0f, 0.0f, 1.0f, 0.0f,
-		0.25f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f,
+		-0.25f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 0.25f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		0.25f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
 	};
 	std::vector<float> vertices3{
-		0.25f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f,
-		0.5f, 0.25f, 0.0f, 0.0f, 1.0f, 0.0f,
-		0.75f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f,
+		0.25f, -0.25f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f,
+		0.5f, 0.25f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f,
+		0.75f, -0.25f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f,
 	};
 	std::vector<unsigned int> elements{ 0, 1, 2 };
 	GLuint vao1 = createVao(vertices1, elements);
@@ -52,7 +52,7 @@ int main() {
 		glBindVertexArray(vao2);
 		shader2.use();
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
-		
+
 		glBindVertexArray(vao3);
 		shader3.use();
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);

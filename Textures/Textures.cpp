@@ -10,6 +10,7 @@
 #include <vao.h>
 #include <window.h>
 
+
 int main()
 {
 	GLFWwindow* window = initWindow(800, 600, "Textures");

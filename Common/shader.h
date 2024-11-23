@@ -10,6 +10,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glad/glad.h>
 
+
 GLuint createShader(GLenum type, const std::string& source) {
 	GLuint shader = glCreateShader(type);
 	const char* sourceArr = source.data();
